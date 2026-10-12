@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/types.ts","./src/components/CreateLink.tsx","./src/components/DatePlanner.tsx","./src/components/FloatingHearts.tsx","./src/components/ProposalCard.tsx","./src/components/SuccessView.tsx","./src/lib/api.ts","./src/lib/effects.ts","./src/lib/params.ts","./src/lib/share.ts"],"version":"5.8.3"}

@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-handwriting: 'Dancing Script', cursive;
+  --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+
+  --color-valentine-50: #fff1f2;
+  --color-valentine-100: #ffe4e6;
+  --color-valentine-200: #fecdd3;
+  --color-valentine-300: #fda4af;
+  --color-valentine-400: #fb7185;
+  --color-valentine-500: #f43f5e;
+  --color-valentine-600: #e11d48;
+  --color-valentine-700: #be123c;
+  --color-valentine-800: #9f1239;
+  --color-valentine-900: #881337;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fff1f2;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  font-family: var(--font-sans);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* CSS-only floating hearts: cheap on phones */
+@keyframes float-up {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  50% { transform: translate3d(20px, -55vh, 0) rotate(12deg); }
+  90% { opacity: 0.6; }
+  100% { transform: translate3d(-10px, -120vh, 0) rotate(-8deg); opacity: 0; }
+}
+.floating-heart {
+  position: absolute;
+  bottom: -60px;
+  animation: float-up linear infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-heart { animation: none; display: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Keep this name the same as your existing Worker so the URL stays the same.
+  "name": "will-you-be-my-valentine",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-02-11",
+  "observability": { "enabled": true },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    "GEMINI_MODEL": "gemini-2.5-flash"
+  }
+  // Secret (never commit it): npx wrangler secret put GEMINI_API_KEY
+}
